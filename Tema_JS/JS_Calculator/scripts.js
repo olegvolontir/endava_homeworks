@@ -1,30 +1,67 @@
+var num1 = null;
+var op = null;
+
 function calculate() {
-    let res = document.getElementById("res").value;
+    if (num1 === null) {
+        return
+    }
 
-    let elems = res.split(" ");
+    let split = document.getElementById("input").value.split(" ");
 
-    let n1, n2, result = 0;
+    if (split[split.length - 1] === op.trim()) {
+        return
+    }
 
-    elems.array.forEach(element => {
-        if (element = "+") {
-            result += (n1 + n2)
+    let num2 = Number(split[split.length - 1]);
+    let res = 0;
+
+    switch (op) {
+        case ' + ': {
+            res = num1 + num2;
+            break;
         }
-        if (element = "-") {
-            result += (n1 + n2)
-        }
-        if (element = "*") {
-            result += (n1 + n2)
-        }
-        if (element = "/") {
-            result += (n1 + n2)
-        }
-    });
 
-    console.log(elems);
+        case ' - ': {
+            res = num1 - num2;
+            break;
+        }
 
+        case ' * ': {
+            res = num1 * num2;
+            break;
+        }
 
+        case ' / ': {
+            res = num1 / num2;
+            break;
+        }
+    }
+
+    document.getElementById("res").value = res;
+
+    document.getElementById("input").value = '';
+    num1 = null;
+    op = null;
 }
 
 function addInput(input) {
-    document.getElementById("res").value += input;
+    document.getElementById("input").value += input;
+}
+
+function selectOperation(input) {
+    if (op !== null) {
+        return
+    }
+
+    op = input;
+
+    num1 = Number(document.getElementById("input").value);
+    document.getElementById("input").value += input;
+}
+
+function clearButton() {
+    num1 = null;
+    op = null;
+    document.getElementById("input").value = '';
+    document.getElementById("res").value = '';
 }
