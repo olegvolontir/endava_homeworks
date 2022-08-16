@@ -1,0 +1,28 @@
+{
+    "furniture": [
+        {
+            "id": "1",
+            "name": "Chair",
+            "description": "Small woden chair",
+            "price": 119
+        },
+        {
+            "id": "2",
+            "name": "Table",
+            "description": "Perfect for the kitchen",
+            "price": 399
+        },
+        {
+            "id": "3",
+            "name": "Sofa",
+            "description": "Can fit up to 2 people",
+            "price": 1299
+        },
+        {
+            "id": "4",
+            "name": "Closet",
+            "description": "A cheap closet for one person",
+            "price": 259
+        }
+    ]
+}
